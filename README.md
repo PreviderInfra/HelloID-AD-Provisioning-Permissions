@@ -8,11 +8,17 @@ This document describes the required permissions for the HelloID Provisioning **
 
 The HelloID service account must have **delegated permissions** on specific Organizational Units (OUs) to:
 
-- Read and write user and group objects
-- Create and delete users and groups
+### User Object Permissions
+- Read and write user objects
+- Create and delete users
+- Modify attributes
+- Reset passwords and control accounts
+
+### Group Object Permissions
+- Read and write group objects
+- Create groups
 - Modify attributes
 - Manage group membership
-- Reset passwords and control accounts
 
 > 🛡️ These permissions should **not** be granted at the domain level — use **least privilege** principles.
 
