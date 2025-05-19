@@ -29,7 +29,7 @@ The HelloID service account must have **delegated permissions** on specific Orga
 | Object Type | Permissions | Purpose |
 |-------------|-------------|---------|
 | User | Create/Delete, Read/Write all attributes, Reset Password, Account Control | Provisioning and lifecycle management |
-| Group | Create/Delete, Read/Write all attributes, Modify membership | Group management for access and roles |
+| Group | Create, Read/Write all attributes, Modify membership | Group management for access and roles |
 
 ---
 
