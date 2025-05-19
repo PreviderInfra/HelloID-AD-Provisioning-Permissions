@@ -40,7 +40,7 @@ Use `dsacls.exe` to grant granular permissions to a service account on a specifi
 
 ### 🔧 Example:
 ```powershell
-dsacls "OU=Users,OU=HR,DC=example,DC=com" /I:T /G "HELLOID\SVC_HelloID:RPWP;user"
+dsacls "OU=Users,OU=HR,DC=example,DC=com" /I:S /G "HELLOID\SVC_HelloID:RPWP;user"
 ```
 
 > This grants **Read/Write all properties** on user objects in the specified OU.
