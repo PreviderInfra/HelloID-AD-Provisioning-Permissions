@@ -39,8 +39,10 @@ Grant-Permission -OU $usersTargetOU -Permission "$($serviceAccount):WP;accountEx
 
 # --- Group Object Permissions ---
 
-# Create and delete group objects
-Grant-Permission -OU $groupsTargetOU -Permission "$($serviceAccount):CCDC;group"
+# Create group objects
+Grant-Permission -OU $groupsTargetOU -Permission "$($serviceAccount):CC;group"
+
+##### Delete group objects
 ##### Grant-Permission $groupsTargetOU -Permission "$($serviceAccount):DC;group"
 
 # Read and write all group attributes
