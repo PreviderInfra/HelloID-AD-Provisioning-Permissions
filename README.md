@@ -47,6 +47,14 @@ dsacls "OU=Users,OU=HR,DC=example,DC=com" /I:S /G "HELLOID\SVC_HelloID:RPWP;user
 
 ---
 
+⚙️ Agent Service Account Requirements
+
+Once installed, all three On-premises Agent services should also run on a domain account with Local Administrator privileges.
+Attempting to run the Agent services with a local system account can cause logon problems for end users or failed AD synchronization tasks.
+Admin privileges are necessary for the Agent to auto-update.
+
+---
+
 ## 📁 OU Scope
 
 Assign permissions **only to the OUs** where HelloID needs to manage users and groups.
