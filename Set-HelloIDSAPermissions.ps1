@@ -51,4 +51,15 @@ Grant-Permission -OU $groupsTargetOU -Permission "$($serviceAccount):RPWP;group"
 # Modify group membership
 Grant-Permission -OU $groupsTargetOU -Permission "$($serviceAccount):WP;member"
 
-Write-Host "Permissions assigned successfully."
+# --- Local Administrator Group Membership ---
+
+try {
+    $group = [ADSI]"WinNT://./Administrators,group"
+    $group.Add("WinNT://$serviceAccount")
+    Write-Host "Service account $serviceAccount added to local Administrators group."
+} catch {
+    Write-Warning "Failed to add $serviceAccount to local Administrators group."
+    Write-Warning "Error: $_"
+}
+
+Write-Host "Permissions assigned completed."
