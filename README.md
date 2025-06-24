@@ -23,6 +23,15 @@ The HelloID service account must have **delegated permissions** on specific Orga
 > 🛡️ These permissions should **not** be granted at the domain level — use **least privilege** principles.
 
 ---
+## 💡 Example Configuration
+
+Below is an example of how to define the service account and OUs in your script:
+
+```powershell
+$serviceAccount = "DOMAIN\#sa_helloid"
+$usersTargetOU = "OU=Users,OU=test-perm-script,OU=Tenants,DC=domain,DC=com"
+$groupsTargetOU = "OU=Groups,OU=test-perm-script,OU=Tenants,DC=domain,DC=com"
+```
 
 ## 🔐 Required Permissions
 
@@ -40,7 +49,8 @@ Use `dsacls.exe` to grant granular permissions to a service account on a specifi
 
 ### 🔧 Example:
 ```powershell
-dsacls "OU=Users,OU=HR,DC=example,DC=com" /I:S /G "HELLOID\SVC_HelloID:RPWP;user"
+dsacls $usersTargetOU /I:T /G "$serviceAccount:RPWP;user"
+dsacls $groupsTargetOU /I:T /G "$serviceAccount:RPWP;group"
 ```
 
 > This grants **Read/Write all properties** on user objects in the specified OU.
