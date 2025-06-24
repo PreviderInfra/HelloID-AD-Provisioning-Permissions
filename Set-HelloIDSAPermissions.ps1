@@ -1,7 +1,7 @@
 # Define variables
-$serviceAccount = "BADCLOUDNL\#sa_helloid"
-$usersTargetOU = "OU=Users,OU=test-perm-script,OU=Tenants,DC=bad-cloud,DC=nl"
-$groupsTargetOU = "OU=Groups,OU=test-perm-script,OU=Tenants,DC=bad-cloud,DC=nl"
+$serviceAccount = "DOMAIN\#sa_helloid"
+$usersTargetOU = "OU=Users,OU=test-perm-script,OU=Tenants,DC=domain,DC=com"
+$groupsTargetOU = "OU=Groups,OU=test-perm-script,OU=Tenants,DC=domain,DC=com"
 
 # Helper function for running Grant-Permission with error handling
 function Grant-Permission {
